@@ -18,7 +18,7 @@ public class ProgressReport {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    private Date reportingDate;
+    private String reportingDate;
     @ManyToOne()
     private Project project;
 }

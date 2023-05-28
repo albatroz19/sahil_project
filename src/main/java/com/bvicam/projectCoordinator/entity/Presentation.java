@@ -17,7 +17,7 @@ public class Presentation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    private Date presentationDate;
+    private String presentationDate;
     @ManyToOne()
     private Project project;
 }

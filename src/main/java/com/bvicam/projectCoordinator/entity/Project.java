@@ -20,9 +20,9 @@ public class Project {
     private long id;
     private String projectName;
     private String projectDescription;
-    private Date startDate;
-    private Date endDate;
-    @ManyToOne
+    private String startDate;
+    private String endDate;
+    @ManyToOne(fetch = FetchType.EAGER)
     private Faculty faculty;
     @OneToMany(mappedBy = "project")
     private List<ProgressReport> progressReports;
