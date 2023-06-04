@@ -1,7 +1,7 @@
 package com.bvicam.projectCoordinator.controller;
 
 
-import com.bvicam.projectCoordinator.dto.MessageDTO;
+import com.bvicam.projectCoordinator.dto.*;
 import com.bvicam.projectCoordinator.entity.*;
 import com.bvicam.projectCoordinator.service.serviceImpl.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,8 @@ public class ProjectCoordinatorController {
     ProgressReportServiceImpl progressReportService;
 
     @PostMapping("/v1/add/project")
-    public ResponseEntity<MessageDTO> addProject(@RequestBody Project project){
-        MessageDTO addProject = projectService.addProject(project);
+    public ResponseEntity<MessageDTO> addProject(@RequestBody ProjectDTO projectDTO){
+        MessageDTO addProject = projectService.addProject(projectDTO);
         return new ResponseEntity<>(addProject, HttpStatus.OK);
     }
 
@@ -52,8 +52,8 @@ public class ProjectCoordinatorController {
     }
 
     @PostMapping("/v1/add/marks")
-    public ResponseEntity<MessageDTO> addMarksBreakup(@RequestBody MarksBreakup marksBreakup){
-        MessageDTO addMarksBreakup = marksBreakupService.addMarksBreakup(marksBreakup);
+    public ResponseEntity<MessageDTO> addMarksBreakup(@RequestBody MarksBreakupDTO marksBreakupDTO){
+        MessageDTO addMarksBreakup = marksBreakupService.addMarksBreakup(marksBreakupDTO);
         return new ResponseEntity<>(addMarksBreakup, HttpStatus.OK);
     }
 
@@ -64,8 +64,8 @@ public class ProjectCoordinatorController {
     }
 
     @PostMapping("/v1/add/presentation")
-    public ResponseEntity<MessageDTO> addPresentation(@RequestBody Presentation presentation){
-        MessageDTO addPresentation = presentationService.addPresentation(presentation);
+    public ResponseEntity<MessageDTO> addPresentation(@RequestBody PresentationDTO presentationDTO){
+        MessageDTO addPresentation = presentationService.addPresentation(presentationDTO);
         return new ResponseEntity<>(addPresentation, HttpStatus.OK);
     }
 
@@ -76,8 +76,8 @@ public class ProjectCoordinatorController {
     }
 
     @PostMapping("/v1/add/progress/report")
-    public ResponseEntity<MessageDTO> addProgressReport(@RequestBody ProgressReport progressReport){
-        MessageDTO addProgressReport = progressReportService.addProgressReport(progressReport);
+    public ResponseEntity<MessageDTO> addProgressReport(@RequestBody ProgressReportDTO progressReportDTO){
+        MessageDTO addProgressReport = progressReportService.addProgressReport(progressReportDTO);
         return new ResponseEntity<>(addProgressReport, HttpStatus.OK);
     }
 
